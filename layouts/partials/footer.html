@@ -1,4 +1,5 @@
 <footer class="footer">
+  {{ if .Page.Params.showCopyright }}
   <section class="container">
     ©
     {{ if (and .Site.Params.since (lt .Site.Params.since now.Year)) }}
@@ -16,4 +17,5 @@
       [<a href="{{ .Site.Params.commit }}/{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash }}</a>]
     {{ end }}
   </section>
+  {{ end }}
 </footer>
